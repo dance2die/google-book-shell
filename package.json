@@ -5,6 +5,10 @@
   "bin": {
     "gbs": "./src/shell.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dance2die/google-book-shell.git"
+  },
   "scripts": {
     "start": "node ./src/shell.js"
   },
@@ -15,8 +19,7 @@
     "opn": "^5.1.0",
     "vorpal": "^1.12.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "keywords": [
     "books",
     "shell",
