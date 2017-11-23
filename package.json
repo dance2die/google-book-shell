@@ -2,6 +2,9 @@
   "name": "google-book-shell",
   "version": "0.0.1",
   "main": "shell.js",
+  "bin": {
+    "gbs": "./src/shell.js"
+  },
   "scripts": {
     "start": "node ./src/shell.js"
   },
