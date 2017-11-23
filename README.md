@@ -39,11 +39,11 @@ google book search$ help
     10: Python Algorithms
     ```
 2. **open**: `open <number>` (number is required).
-    - Description: Opens the searched book by the search result order in a web browser.
+    - Description: Opens the searched book by the search result order in a *web browser*.
     - *NOTE*: Works only after **search** is run.
     - e.g.) open 1
 3. **view**: `view <number>` (number is required).
-    - Description: Displays the description of the searched book by search result order.
+    - Description: Displays the description of the searched book in *console* by search result order.
     - *NOTE*: Works only after **search** is run.
     - Example
     ```bash
