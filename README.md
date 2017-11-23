@@ -1,9 +1,15 @@
 # Google Book Shell
 
+## How to Install
+`npm install -g google-book-shell`
+
 ## How to Run
-1. Clone the source: 
-`git clone https://github.com/dance2die/google-book-shell.git`
-2. Run it using `yarn start`
+Type `gbs`
+```bash
+dance2die@LELOUCH c:\misc\sources
+> gbs
+google book search$
+```
 
 ## Usage
 Type `help` for the list of commands
@@ -80,6 +86,7 @@ google book search$ help
     10: Python Algorithms                        
     ```
 
-## To Do
-1. Create a CLI
-2. Publish the CLI to NPM
+## How to Run from the Source
+1. Clone the source: 
+`git clone https://github.com/dance2die/google-book-shell.git`
+2. Run it using `yarn start`
