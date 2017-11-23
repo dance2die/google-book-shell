@@ -1,5 +1,9 @@
 # Google Book Shell
 
+## Demo
+[![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/LgxErGTCB-g/0.jpg)](http://www.youtube.com/watch?v=LgxErGTCB-g "Google Book Shell (NodeJS CLI) Demo
+")
+
 ## How to Install
 `npm install -g google-book-shell`
 
