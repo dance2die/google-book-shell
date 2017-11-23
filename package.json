@@ -1,0 +1,20 @@
+{
+  "name": "google-book-shell",
+  "version": "0.0.1",
+  "main": "shell.js",
+  "scripts": {
+    "start": "node ./src/shell.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "chalk": "^2.3.0",
+    "debug": "^3.1.0",
+    "opn": "^5.1.0",
+    "vorpal": "^1.12.0"
+  },
+  "keywords": ["books", "shell", "google books", "book"],
+  "author": "dance2die (Sung Kim)",
+  "license": "MIT",
+  "description": "Search books on Google Books"
+}
