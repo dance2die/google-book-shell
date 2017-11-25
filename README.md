@@ -113,7 +113,3 @@ google book search$ help
 1. Clone the source: 
 `git clone https://github.com/dance2die/google-book-shell.git`
 2. Run it using `yarn start`
-
-## TODO
-- Open Amazon page (`open` opens Google Book page by default)
-    - open --amazon (or -a) <number>
