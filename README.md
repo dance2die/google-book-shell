@@ -50,10 +50,24 @@ google book search$ help
     09: Algorithmic Puzzles
     10: Python Algorithms
     ```
-2. **open**: `open <number>` (number is required).
+2. **open**: `open [options] <number>` (number is required).
     - Description: Opens the searched book by the search result order in a *web browser*.
     - *NOTE*: Works only after **search** is run.
-    - e.g.) open 1
+    - Options:
+    ```bash
+    Options:
+        --help                        output usage information
+        -a, --amazon                  open Amazon link
+        -s, --strip-amazon-affiliate  strip affiliate query parameter
+    ```
+    - `--amazon` (or `-a` for short): Opens Amazon Web Link with affiliate info
+        - Amazon's Product API requires a developer to sign up as an affiliate so this was unavoidable.
+        - So I added the following option (`-s`) to strip out affiliate info if you choose to do so
+    - `--strip-amazon-affiliate` (or `-s` for short): Strip out affiliate info (Please support me by not using this flag 👼)
+    - e.g.) 
+        - `open 1`
+        - `open -a 1` (or `open --amazon 1`)
+        - `open -a -s 1` (or `open --amazon --strip-amazon-affiliate 1`)
 3. **view**: `view <number>` (number is required).
     - Description: Displays the description of the searched book in *console* by search result order.
     - *NOTE*: Works only after **search** is run.
