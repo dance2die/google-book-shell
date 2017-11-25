@@ -1,14 +1,16 @@
-const d = require('debug')('shell');
+const d = require('debug')('GoogleBookSearchShell');
 const opn = require('opn');
 const vorpal = require('vorpal')();
 
 const BookSearcher = require('./BookSearcher');
 const Writer = require('./Writer');
+const AmazonProductAPIRepository = require('./AmazonProductAPIRepository');
 
 class GoogleBookSearchShell {
     constructor() {
         this.books = [];
         this.bookSearcher = new BookSearcher();
+        this.amazonProductAPIRepository = new AmazonProductAPIRepository();
 
         this.writer = new Writer();
     }
@@ -30,6 +32,12 @@ class GoogleBookSearchShell {
         return true;
     }
 
+    async getAmazonBookURLByISBN(isbn) {
+        const books = await this.amazonProductAPIRepository.getBookAsync(isbn);
+        d("getAmazonBookURLByISBN.books", books);
+        return books[0].DetailPageURL[0];
+    }
+
     async setupCommands() {
         // "search" command
         vorpal
@@ -45,12 +53,33 @@ class GoogleBookSearchShell {
         // "open" in browser command
         vorpal
             .command('open <number>', 'open # in searched book list')
+            // Get Amazon Book link.
+            .option('-a, --amazon', 'open Amazon link')
+            // If you are uncomfortable with Affiliate links, strip it out
+            .option('-s, --strip-amazon-affiliate', 'strip affiliate query parameter')
             // later on add options to open preview, info links.
             .validate(args => this.validateBookNumber(args.number))
             .action(async (args, callback) => {
-                const bookURL = this.books[args.number - 1].volumeInfo.previewLink;
-                opn(bookURL);
+                const bookIndex = args.number - 1;
+                const book = this.books[bookIndex];
+                let bookURL = book.volumeInfo.previewLink;
+                d("args", args);
 
+                if (args.options.amazon) {
+                    const isbns = book.volumeInfo.industryIdentifiers;
+                    // isbn[0] = ISBN 10, while isbn[1] contains ISBN 13
+                    const isbn = isbns && isbns[0] ? isbns[0].identifier: "";
+                    bookURL = await this.getAmazonBookURLByISBN(isbn);
+
+                    // Remove Amazon affiliate link if user choose to do so.
+                    if (args.options["strip-amazon-affiliate"]) {
+                        bookURL = bookURL.split('?')[0];
+                    }
+                }
+
+                d("finally bookURL", bookURL);
+                opn(bookURL);
+                
                 callback();
             });
 
@@ -67,7 +96,7 @@ class GoogleBookSearchShell {
         // "print" searched books
         vorpal
             .command("print", "print searched books")
-            .action((args, callback) =>{
+            .action((args, callback) => {
                 this.writer.printBooks(this.books);
 
                 callback();
