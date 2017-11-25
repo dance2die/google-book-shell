@@ -68,6 +68,9 @@ google book search$ help
         - `open 1`
         - `open -a 1` (or `open --amazon 1`)
         - `open -a -s 1` (or `open --amazon --strip-amazon-affiliate 1`)
+        - YouTube walk-through
+        
+        [![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/_6tfVYkrJQU/0.jpg)](https://www.youtube.com/watch?v=_6tfVYkrJQU")
 3. **view**: `view <number>` (number is required).
     - Description: Displays the description of the searched book in *console* by search result order.
     - *NOTE*: Works only after **search** is run.
