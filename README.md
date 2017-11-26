@@ -75,24 +75,10 @@ google book search$ help
     - Description: Displays the description of the searched book in *console* by search result order.
     - When `[number]` argument is missing, it will let user choose a book to view detail for
     - *NOTE*: Works only after **search** is run.
-    - Example with `[number]` argument.
-    ```bash
-    google book search$ view 2                                       
-    Title: Grokking Deep Learning                                    
-    Subtitle:                                                        
-    Authors: Andrew Trask                                            
-    Publisher: Manning Publications                                  
-    Published Date: 2017-03-31                                       
-    ISBN 10: 1617293709                                              
-    ISBN 13: 9781617293702                                           
-    Page Count: 325                                                  
-    Categories: Computers                                            
-    description: Artificial Intelligence is the most exciting technol
-    rtificial Intelligence systems out there. Grokking Deep Learning 
-    PI of some library or framework, readers will actually understand
-    Book in PDF, Kindle, and ePub formats from Manning Publications. 
-    ```
-    - Example withOUT `[number]` argument.
+    - Example **with** `[number]` argument.
+    ![Example with `[number]` argument.](https://i.imgur.com/J5THPsJ.gif)
+
+    - Example **withOUT** `[number]` argument.
     ![Example withOUT `[number]` argument.](https://i.imgur.com/leUgfor.gif)
 4. **print**: `print`
     - Description: Reprints searched book result
