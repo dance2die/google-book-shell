@@ -34,10 +34,11 @@ google book search$ help
 ```
 
 ## Commands
-1. **search**: `search <book name>` (book name is required).
-    - Description: Searches for the book on Google Books.
+### **search**
+    - USAGE: `search <book name>` (book name is required).
+    - DESCRIPTION: Searches for the book on Google Books.
     - If the name has a space, use a double/single quote around the name.
-    - Example
+    - EXAMPLE
     ```bash
     google book search$ search "Grokking Algorithms"
     01: Grokking Algorithms
