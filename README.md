@@ -1,4 +1,5 @@
 # Google Book Shell
+Search [Google Books](https://books.google.com/) from command line window.
 
 ## Video of "How to Install & Use Google-Book-Shell"
 [![How to Install & Use Google-Book-Shell](https://i.imgur.com/YtI0HA0.gif)](http://www.youtube.com/watch?v=XK4NgwJqw0s "Google Book Shell (NodeJS CLI) Demo
