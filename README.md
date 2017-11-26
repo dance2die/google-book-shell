@@ -93,7 +93,7 @@ google book search$ help
     Book in PDF, Kindle, and ePub formats from Manning Publications. 
     ```
     - Example withOUT `[number]` argument.
-    
+    ![Example withOUT `[number]` argument.](https://i.imgur.com/leUgfor.gif)
 4. **print**: `print`
     - Description: Reprints searched book result
     - *Note*: Displays nothing when no search was performed previously.
