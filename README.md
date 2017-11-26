@@ -1,7 +1,7 @@
 # Google Book Shell
 
 ## Video of "How to Install & Use Google-Book-Shell"
-[![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/XK4NgwJqw0s/0.jpg)](http://www.youtube.com/watch?v=XK4NgwJqw0s "Google Book Shell (NodeJS CLI) Demo
+[![How to Install & Use Google-Book-Shell](https://i.imgur.com/YtI0HA0.gif)](http://www.youtube.com/watch?v=XK4NgwJqw0s "Google Book Shell (NodeJS CLI) Demo
 ")
 
 ## How to Install
