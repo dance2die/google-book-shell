@@ -42,6 +42,10 @@ babel-runtime@^6.26.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
 
+bluebird@^3.1.5:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
+
 chalk@^1.0.0, chalk@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -69,6 +73,10 @@ cli-cursor@^1.0.1, cli-cursor@^1.0.2:
 cli-width@^1.0.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-1.1.1.tgz#a4d293ef67ebb7b88d4a4d42c0ccf00c4d1e366d"
+
+clone@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.3.tgz#298d7e2231660f40c003c2ed3140decf3f53085f"
 
 code-point-at@^1.0.0:
   version "1.1.0"
@@ -129,6 +137,20 @@ in-publish@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/in-publish/-/in-publish-2.0.0.tgz#e20ff5e3a2afc2690320b6dc552682a9c7fadf51"
 
+inquirer-bluebird@^1.0.2:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/inquirer-bluebird/-/inquirer-bluebird-1.0.7.tgz#1cc90be6f6101443613ae5a63c1726c2ac1fbc1c"
+  dependencies:
+    bluebird "^3.1.5"
+    inquirer "^0.11.4"
+
+inquirer-question@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/inquirer-question/-/inquirer-question-1.2.1.tgz#ec596e5316b7a933b8cfe7ce683efc55b509d33a"
+  dependencies:
+    clone "^1.0.2"
+    inquirer-bluebird "^1.0.2"
+
 inquirer@0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-0.11.0.tgz#7448bfa924092af311d47173bbab990cae2bb027"
@@ -143,6 +165,24 @@ inquirer@0.11.0:
     readline2 "^1.0.1"
     run-async "^0.1.0"
     rx-lite "^3.1.2"
+    strip-ansi "^3.0.0"
+    through "^2.3.6"
+
+inquirer@^0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-0.11.4.tgz#81e3374e8361beaff2d97016206d359d0b32fa4d"
+  dependencies:
+    ansi-escapes "^1.1.0"
+    ansi-regex "^2.0.0"
+    chalk "^1.0.0"
+    cli-cursor "^1.0.1"
+    cli-width "^1.0.1"
+    figures "^1.3.5"
+    lodash "^3.3.1"
+    readline2 "^1.0.1"
+    run-async "^0.1.0"
+    rx-lite "^3.1.2"
+    string-width "^1.0.1"
     strip-ansi "^3.0.0"
     through "^2.3.6"
 

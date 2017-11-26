@@ -16,6 +16,7 @@
     "axios": "^0.17.1",
     "chalk": "^2.3.0",
     "debug": "^3.1.0",
+    "inquirer-question": "^1.2.1",
     "opn": "^5.1.0",
     "vorpal": "^1.12.0"
   },

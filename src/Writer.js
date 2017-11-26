@@ -6,6 +6,7 @@ class Writer {
     constructor() {
         this.chalks = {
             name: chalk.bgRgb(15, 100, 204),
+            header: chalk.bgYellow.bold,
             title: chalk.blue
         }
     }
@@ -35,16 +36,21 @@ class Writer {
             industryIdentifiers, pageCount, categories,
         } = book.volumeInfo;
 
-        this.logDescription("Title", title);
-        this.logDescription("Subtitle", subtitle);
-        this.logDescription("Authors", authors ? authors.join(", ") : "");
-        this.logDescription("Publisher", publisher);
-        this.logDescription("Published Date", publishedDate);
-        this.logDescription("ISBN 10", industryIdentifiers && industryIdentifiers[0] ? industryIdentifiers[0].identifier: "");
-        this.logDescription("ISBN 13", industryIdentifiers && industryIdentifiers[1] ? industryIdentifiers[1].identifier : "");
-        this.logDescription("Page Count", pageCount);
-        this.logDescription("Categories", categories ? categories.join(", ") : "");
-        this.logDescription("description", description);
+        const repeatCount = 30;
+        const repeatCharacter = '=';
+        const header = `${repeatCharacter.repeat(repeatCount)} ${this.chalks.header(title)} ${repeatCharacter.repeat(repeatCount)}`;
+        log(header);
+        // this.logDescription("Title", title);
+        this.logDescription("Subtitle       ", subtitle);
+        this.logDescription("Authors        ", authors ? authors.join(", ") : "");
+        this.logDescription("Publisher      ", publisher);
+        this.logDescription("Published Date ", publishedDate);
+        this.logDescription("ISBN 10        ", industryIdentifiers && industryIdentifiers[0] ? industryIdentifiers[0].identifier: "");
+        this.logDescription("ISBN 13        ", industryIdentifiers && industryIdentifiers[1] ? industryIdentifiers[1].identifier : "");
+        this.logDescription("Page Count     ", pageCount);
+        this.logDescription("Categories     ", categories ? categories.join(", ") : "");
+        this.logDescription("description    ", description);
+        log(repeatCharacter.repeat((repeatCount * 2) + title.length + 2));
     }
 }
 

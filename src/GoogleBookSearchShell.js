@@ -1,6 +1,7 @@
 const d = require('debug')('GoogleBookSearchShell');
 const opn = require('opn');
 const vorpal = require('vorpal')();
+const inquirer = require('inquirer-question');
 
 const BookSearcher = require('./BookSearcher');
 const Writer = require('./Writer');
@@ -68,7 +69,7 @@ class GoogleBookSearchShell {
                 if (args.options.amazon) {
                     const isbns = book.volumeInfo.industryIdentifiers;
                     // isbn[0] = ISBN 10, while isbn[1] contains ISBN 13
-                    const isbn = isbns && isbns[0] ? isbns[0].identifier: "";
+                    const isbn = isbns && isbns[0] ? isbns[0].identifier : "";
                     bookURL = await this.getAmazonBookURLByISBN(isbn);
 
                     // Remove Amazon affiliate link if user choose to do so.
@@ -79,16 +80,43 @@ class GoogleBookSearchShell {
 
                 d("finally bookURL", bookURL);
                 opn(bookURL);
-                
+
                 callback();
             });
 
         // "view" (description) command
         vorpal
-            .command('view <number>', 'view detailed description of the book')
-            .validate(args => this.validateBookNumber(args.number))
+            .command('view [number]', 'view detailed description of the book')
+            // .validate(args => this.validateBookNumber(args.number))
+            .validate(args => {
+                if (this.books.length === 0) return "Search first before viewing details...";
+                else return true;
+            })
             .action(async (args, callback) => {
-                this.writer.viewBookDescription(this.books[args.number - 1]);
+                if (args.number) {
+                    this.writer.viewBookDescription(this.books[args.number - 1]);
+                } else {
+                    vorpal.hide();
+
+                    // build choices
+                    let choices = {};
+                    this.books.forEach((book, i) => {
+                        let number = (i + 1).toString().padStart(2, '0');
+                        const choice = `${number}: ${book.volumeInfo.title}`;
+                        choices[choice] = i;
+                    });
+
+                    inquirer.prompt({
+                        type: 'list',
+                        message: 'Select a book to view the detail',
+                        choices: choices
+                    }).then((result) => {
+                        // console.log(result); //=> 1 or 2
+                        this.writer.viewBookDescription(this.books[result]);
+                        vorpal.show();
+                    });
+                }
+
 
                 callback();
             });
