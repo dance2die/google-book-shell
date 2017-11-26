@@ -34,7 +34,7 @@ google book search$ help
 ```
 
 ## Commands
-### **search**
+### 1. **search**
     - USAGE: `search <book name>` (book name is required).
     - DESCRIPTION: Searches for the book on Google Books.
     - If the name has a space, use a double/single quote around the name.
@@ -52,10 +52,11 @@ google book search$ help
     09: Algorithmic Puzzles
     10: Python Algorithms
     ```
-2. **open**: `open [options] <number>` (number is required).
-    - Description: Opens the searched book by the search result order in a *web browser*.
+### 2. **open**
+    - USAGE: `open [options] <number>` (number is required).
+    - DESCRIPTION: Opens the searched book by the search result order in a *web browser*.
     - *NOTE*: Works only after **search** is run.
-    - Options:
+    - OPTIONS:
     ```bash
     Options:
         --help                        output usage information
@@ -73,19 +74,21 @@ google book search$ help
         - YouTube walk-through
         
         [![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/_6tfVYkrJQU/0.jpg)](https://www.youtube.com/watch?v=_6tfVYkrJQU")
-3. **view**: `view [number]` (number is optional).
-    - Description: Displays the description of the searched book in *console* by search result order.
+### 3. **view**
+    - USAGE: `view [number]` (number is optional).
+    - DESCRIPTION: Displays the description of the searched book in *console* by search result order.
     - When `[number]` argument is missing, it will let user choose a book to view detail for
     - *NOTE*: Works only after **search** is run.
-    - Example **with** `[number]` argument.
+    - EXAMPLE **with** `[number]` argument.
     ![Example with `[number]` argument.](https://i.imgur.com/J5THPsJ.gif)
 
-    - Example **withOUT** `[number]` argument.
+    - EXAMPLE **withOUT** `[number]` argument.
     ![Example withOUT `[number]` argument.](https://i.imgur.com/leUgfor.gif)
-4. **print**: `print`
-    - Description: Reprints searched book result
+### 4. **print**
+    - USAGE: `print`
+    - DESCRIPTION: Reprints searched book result
     - *Note*: Displays nothing when no search was performed previously.
-    - Example
+    - EXAMPLE
     ```bash
     google book search$ print                    
     01: Grokking Algorithms                      
