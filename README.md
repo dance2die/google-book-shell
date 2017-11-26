@@ -71,10 +71,11 @@ google book search$ help
         - YouTube walk-through
         
         [![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/_6tfVYkrJQU/0.jpg)](https://www.youtube.com/watch?v=_6tfVYkrJQU")
-3. **view**: `view <number>` (number is required).
+3. **view**: `view [number]` (number is optional).
     - Description: Displays the description of the searched book in *console* by search result order.
+    - When `[number]` argument is missing, it will let user choose a book to view detail for
     - *NOTE*: Works only after **search** is run.
-    - Example
+    - Example with `[number]` argument.
     ```bash
     google book search$ view 2                                       
     Title: Grokking Deep Learning                                    
@@ -91,6 +92,8 @@ google book search$ help
     PI of some library or framework, readers will actually understand
     Book in PDF, Kindle, and ePub formats from Manning Publications. 
     ```
+    - Example withOUT `[number]` argument.
+    
 4. **print**: `print`
     - Description: Reprints searched book result
     - *Note*: Displays nothing when no search was performed previously.
