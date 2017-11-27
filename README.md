@@ -113,7 +113,9 @@ _____
 ## How to‍ 🏃‍ from the Source
 1. Clone the source: 
 `git clone https://github.com/dance2die/google-book-shell.git`
-2. Run it using `npm` or `yarn`
+2. Install NPM packages/dependencies
+`npm install` or `yarn`
+3. Run it using `npm` or `yarn`
 - `yarn start`
 
     --or--
