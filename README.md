@@ -121,3 +121,7 @@ _____
     --or--
 
 - `npm run start`
+_____
+## TODO
+- Add an autocomplete feature.
+- Add aliases for existing commands.
