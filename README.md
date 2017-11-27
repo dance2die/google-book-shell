@@ -125,3 +125,4 @@ _____
 ## TODO
 - Add an autocomplete feature.
 - Add aliases for existing commands.
+- ? Compare prices from Google Books/Amazon/Barnes & Noble?
