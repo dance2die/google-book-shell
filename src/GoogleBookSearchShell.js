@@ -2,6 +2,8 @@ const d = require('debug')('GoogleBookSearchShell');
 const opn = require('opn');
 const vorpal = require('vorpal')();
 const inquirer = require('inquirer-question');
+const ora = require('ora');
+const chalk = require('chalk');
 
 const BookSearcher = require('./BookSearcher');
 const Writer = require('./Writer');
@@ -67,14 +69,24 @@ class GoogleBookSearchShell {
                 d("args", args);
 
                 if (args.options.amazon) {
-                    const isbns = book.volumeInfo.industryIdentifiers;
-                    // isbn[0] = ISBN 10, while isbn[1] contains ISBN 13
-                    const isbn = isbns && isbns[0] ? isbns[0].identifier : "";
-                    bookURL = await this.getAmazonBookURLByISBN(isbn);
+                    const spinner = ora(chalk.red('Fetching data from Amazon Product Advertising API...')).start();
 
-                    // Remove Amazon affiliate link if user choose to do so.
-                    if (args.options["strip-amazon-affiliate"]) {
-                        bookURL = bookURL.split('?')[0];
+                    try {
+                        const isbns = book.volumeInfo.industryIdentifiers;
+                        // isbn[0] = ISBN 10, while isbn[1] contains ISBN 13
+                        const isbn = isbns && isbns[0] ? isbns[0].identifier : "";
+                        bookURL = await this.getAmazonBookURLByISBN(isbn);
+
+                        spinner.stop();
+
+                        // Remove Amazon affiliate link if user choose to do so.
+                        if (args.options["strip-amazon-affiliate"]) {
+                            bookURL = bookURL.split('?')[0];
+                        }
+                    } catch (ex) {
+                        spinner.fail('Error while fetching Amazon URL from Product Advertising API...');
+                    } finally {
+                        spinner.clear();
                     }
                 }
 
