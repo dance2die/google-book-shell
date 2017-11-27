@@ -34,8 +34,7 @@ google book search$ help
 ```
 
 ## Commands
-### ___
-1. **search**
+### **search**
     - USAGE: `search <book name>` (book name is required).
     - DESCRIPTION: Searches for the book on Google Books.
     - If the name has a space, use a double/single quote around the name.
@@ -76,7 +75,7 @@ google book search$ help
         - YouTube walk-through
         
         [![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/_6tfVYkrJQU/0.jpg)](https://www.youtube.com/watch?v=_6tfVYkrJQU")
-### 3. **view**
+### **view**
     - USAGE: `view [number]` (number is optional).
     - DESCRIPTION: Displays the description of the searched book in *console* by search result order.
     - When `[number]` argument is missing, it will let user choose a book to view detail for
@@ -86,7 +85,7 @@ google book search$ help
 
     - EXAMPLE **withOUT** `[number]` argument.
     ![Example withOUT `[number]` argument.](https://i.imgur.com/leUgfor.gif)
-### 4. **print**
+### **print**
     - USAGE: `print`
     - DESCRIPTION: Reprints searched book result
     - *Note*: Displays nothing when no search was performed previously.
