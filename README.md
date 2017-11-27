@@ -34,7 +34,7 @@ google book search$ help
 ```
 
 ## Commands
-###
+### ___
 1. **search**
     - USAGE: `search <book name>` (book name is required).
     - DESCRIPTION: Searches for the book on Google Books.
