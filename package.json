@@ -1,6 +1,6 @@
 {
   "name": "google-book-shell",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "shell.js",
   "bin": {
     "gbs": "./src/shell.js"
