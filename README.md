@@ -34,7 +34,8 @@ google book search$ help
 ```
 
 ## Commands
-### 1. **search**
+###
+1. **search**
     - USAGE: `search <book name>` (book name is required).
     - DESCRIPTION: Searches for the book on Google Books.
     - If the name has a space, use a double/single quote around the name.
@@ -52,11 +53,12 @@ google book search$ help
     09: Algorithmic Puzzles
     10: Python Algorithms
     ```
-### 2. **open**
+### **open**
     - USAGE: `open [options] <number>` (number is required).
     - DESCRIPTION: Opens the searched book by the search result order in a *web browser*.
     - *NOTE*: Works only after **search** is run.
     - OPTIONS:
+    
     ```bash
     Options:
         --help                        output usage information
