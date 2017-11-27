@@ -6,12 +6,15 @@ Search [Google Books](https://books.google.com/) from command line window.
 ")
 
 ## How to Install
-`npm install -g google-book-shell`
+> npm install -g google-book-shell
+
+If you have already installed it before (Thank you 😇), update it as shown below.
+> npm update -g google-book-shell
 
 Link to [Google-Book-Shell](https://www.npmjs.com/package/google-book-shell) NPM page.
 _____
 
-## How to Run
+## How to Run 🏃‍
 Type `gbs`
 ```bash
 dance2die@LELOUCH c:\misc\sources
@@ -107,7 +110,12 @@ _____
   10: Python Algorithms                        
   ```
 _____
-## How to Run from the Source
+## How to‍ 🏃‍ from the Source
 1. Clone the source: 
 `git clone https://github.com/dance2die/google-book-shell.git`
-2. Run it using `yarn start`
+2. Run it using `npm` or `yarn`
+- `yarn start`
+
+    --or--
+
+- `npm run start`
