@@ -68,6 +68,8 @@ _____
   - `--amazon` (or `-a` for short): Opens Amazon Web Link with affiliate info
       - Amazon's Product API requires a developer to sign up as an affiliate so this was unavoidable.
       - So I added the following option (`-s`) to strip out affiliate info if you choose to do so
+      - This flag calls an Azure Function, which needs to wake up after some inactivity (Takes about 10~30 seconds). It will work faster after the first call.
+      [![Example](https://i.imgur.com/7CnFDfe.gif)](https://youtu.be/htMZAkHSM94)
   - `--strip-amazon-affiliate` (or `-s` for short): Strip out affiliate info (Please support me by not using this flag 👼)
   - e.g.) 
       - `open 1`
