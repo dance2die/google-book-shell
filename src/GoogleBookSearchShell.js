@@ -45,7 +45,7 @@ class GoogleBookSearchShell {
         // "search" command
         vorpal
             .command('search <book>', 'search for a book in Google Books')
-            // .option('-n, --number <number>', 'Hackernews #')
+            .alias('s')
             .action(async (args, callback) => {
                 this.books = await this.bookSearcher.getSearchedBooksAsync(args.book);
                 this.writer.printBooks(this.books);
@@ -56,6 +56,9 @@ class GoogleBookSearchShell {
         // "open" in browser command
         vorpal
             .command('open <number>', 'open # in searched book list')
+            // Populate 1-N https://stackoverflow.com/a/34388474/4035
+            // .autocomplete(Array(10).fill().map((e,i) => (i + 1).toString()))
+            .alias('o')
             // Get Amazon Book link.
             .option('-a, --amazon', 'open Amazon link')
             // If you are uncomfortable with Affiliate links, strip it out
@@ -99,6 +102,7 @@ class GoogleBookSearchShell {
         // "view" (description) command
         vorpal
             .command('view [number]', 'view detailed description of the book')
+            .alias('v')
             // .validate(args => this.validateBookNumber(args.number))
             .validate(args => {
                 if (this.books.length === 0) return "Search first before viewing details...";
@@ -136,6 +140,7 @@ class GoogleBookSearchShell {
         // "print" searched books
         vorpal
             .command("print", "print searched books")
+            .alias('p')
             .action((args, callback) => {
                 this.writer.printBooks(this.books);
 
