@@ -40,6 +40,7 @@ _____
 ## Commands
 ### **search**
   - USAGE: `search <book name>` (book name is required).
+  - ALIAS: `s`
   - DESCRIPTION: Searches for the book on Google Books.
   - If the name has a space, use a double/single quote around the name.
   - EXAMPLE
@@ -58,6 +59,7 @@ _____
   ```
 ### **open**
   - USAGE: `open [options] <number>` (number is required).
+  - ALIAS: `o`
   - DESCRIPTION: Opens the searched book by the search result order in a *web browser*.
   - *NOTE*: Works only after **search** is run.
   - OPTIONS:
@@ -83,6 +85,7 @@ _____
       [![How to Install & Use Google-Book-Shell](http://img.youtube.com/vi/_6tfVYkrJQU/0.jpg)](https://www.youtube.com/watch?v=_6tfVYkrJQU")
 ### **view**
   - USAGE: `view [number]` (number is optional).
+  - ALIAS: `v`
   - DESCRIPTION: Displays the description of the searched book in *console* by search result order.
   - When `[number]` argument is missing, it will let user choose a book to view detail for
   - *NOTE*: Works only after **search** is run.
@@ -93,6 +96,7 @@ _____
   ![Example withOUT `[number]` argument.](https://i.imgur.com/leUgfor.gif)
 ### **print**
   - USAGE: `print`
+  - ALIAS: `p`
   - DESCRIPTION: Reprints searched book result
   - *Note*: Displays nothing when no search was performed previously.
   - EXAMPLE
