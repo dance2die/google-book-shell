@@ -113,6 +113,10 @@ _____
   09: Algorithmic Puzzles                      
   10: Python Algorithms                        
   ```
+
+## Demo using Aliases only
+You can search, view details, and open browser much faster with aliases.
+[![alias demo](https://i.imgur.com/4elrs5F.gif)](https://youtu.be/R1BYlWvktGs)
 _____
 ## How to‍ 🏃‍ from the Source
 1. Clone the source: 
