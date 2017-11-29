@@ -5,16 +5,14 @@ const inquirer = require('inquirer-question');
 const ora = require('ora');
 const chalk = require('chalk');
 
-const BookSearcher = require('./BookSearcher');
+const BookSearchService = require('./services/BookSearchService');
 const Writer = require('./Writer');
-const AmazonProductAPIRepository = require('./AmazonProductAPIRepository');
 
 class GoogleBookSearchShell {
     constructor() {
         this.books = [];
-        this.bookSearcher = new BookSearcher();
-        this.amazonProductAPIRepository = new AmazonProductAPIRepository();
 
+        this.BookSearchService = new BookSearchService();
         this.writer = new Writer();
     }
 
@@ -38,7 +36,7 @@ class GoogleBookSearchShell {
     }
 
     async getAmazonBookURLByISBN(isbn) {
-        const books = await this.amazonProductAPIRepository.getBookAsync(isbn);
+        const books = await this.BookSearchService.getAmazonBookAsync(isbn);
         d("getAmazonBookURLByISBN.books", books);
         return books[0].DetailPageURL[0];
     }
@@ -49,7 +47,7 @@ class GoogleBookSearchShell {
             .command('search <book>', 'search for a book in Google Books')
             .alias('s')
             .action(async (args, callback) => {
-                this.books = await this.bookSearcher.getSearchedBooksAsync(args.book);
+                this.books = await this.BookSearchService.getGoogleBooks(args.book);
                 this.writer.printBooks(this.books);
 
                 callback();
