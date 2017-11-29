@@ -19,6 +19,8 @@ class GoogleBookSearchShell {
     }
 
     validateBookNumber(number) {
+        if (number == undefined) return true;
+
         // make sure that a user has entered a numeric value.
         if (!Number.isInteger(number)) {
             return "Enter a number for <number> argument!";
@@ -28,8 +30,8 @@ class GoogleBookSearchShell {
             return "Search for a book first...";
         }
         // check that number falls between the searched book count
-        else if (parseInt(number) > this.books.length) {
-            return "Enter a number less than the number of books returned from the search...";
+        else if (0 >= parseInt(number) || parseInt(number) > this.books.length) {
+            return `Enter a number between 1 and ${this.books.length}`;
         }
 
         return true;
@@ -103,11 +105,7 @@ class GoogleBookSearchShell {
         vorpal
             .command('view [number]', 'view detailed description of the book')
             .alias('v')
-            // .validate(args => this.validateBookNumber(args.number))
-            .validate(args => {
-                if (this.books.length === 0) return "Search first before viewing details...";
-                else return true;
-            })
+            .validate(args => this.validateBookNumber(args.number))
             .action(async (args, callback) => {
                 if (args.number) {
                     this.writer.viewBookDescription(this.books[args.number - 1]);
