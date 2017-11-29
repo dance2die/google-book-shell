@@ -131,6 +131,6 @@ _____
 - `npm run start`
 _____
 ## TODO
-- Add an autocomplete feature.
-- Add aliases for existing commands.
+- Separate each command into different files.
+- Use a plugin archiecture to dynamically load commands.
 - ? Compare prices from Google Books/Amazon/Barnes & Noble?
